@@ -34,6 +34,9 @@ while [ $# -ne 0 ]; do
     elif [ $1 == "--completed" ]; then
         cat -n $completed_file
         shift
+    elif [ $1 == "--clear" ]; then
+        rm -f $completed_file $outstanding_file
+        shift
     fi
 done
 
